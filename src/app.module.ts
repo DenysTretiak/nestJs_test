@@ -8,8 +8,7 @@ import configuration from './config/configuration';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load: [configuration],
-      isGlobal: true,
+      load: [configuration]
     }),
     UserModule
   ],

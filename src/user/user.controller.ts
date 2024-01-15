@@ -16,8 +16,8 @@ export class UserController {
     const dbUser = this.configService.get<string>('DATABASE_USER');
     console.log(dbUser, 'dbUser');
 
-    const dbHost = this.configService.get<string>('database.host');
-    console.log(dbHost, 'dbHost');
+    const dbConfig = this.configService.get<any>('database');
+    console.log(dbConfig, 'dbConfig');
 
     return this.userService.getUser(id);
   }
