@@ -13,7 +13,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     }),
     UserModule,
     MongooseModule.forRoot(
-      'mongodb+srv://dbUser:dbPassword@cluster0.pyqn2ba.mongodb.net/',
+      'mongodb://localhost:27017/',
     ),
   ],
   controllers: [AppController],
