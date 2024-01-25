@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { ConfigService } from '@nestjs/config';
+import { UserCreateDto } from './user-create.dto';
 
 @Controller('/user')
 export class UserController {
@@ -15,7 +16,7 @@ export class UserController {
   getUser(@Param('id') id: string) {
     const dbUser = this.configService.get<string>('DATABASE_USER');
     console.log(dbUser, 'dbUser');
-
+    const rule = 'dwad';
     const dbConfig = this.configService.get<any>('database');
     console.log(dbConfig, 'dbConfig');
 
@@ -23,7 +24,7 @@ export class UserController {
   }
 
   @Post()
-  addUser(@Body() body: any) {
+  addUser(@Body() body: UserCreateDto) {
     return this.userService.addUser(body);
   }
 
